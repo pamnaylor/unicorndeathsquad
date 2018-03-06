@@ -1,25 +1,14 @@
 ﻿// Here we get the module we created in file one
-angular.module('myApp').controller('CtrlLoad', CtrlLoad);
+angular.module('myApp').controller('customerController', customerController);
 
 // Inject my dependencies
-CtrlLoad.$inject = ['$scope', '$http', 'loadservice'];
+customerController.$inject = ['$scope', 'loadservice'];
 
 // Now create our controller function with all necessary logic
-function CtrlLoad($scope, $http, loadservice) {
-    vm = $scope,
-    vm.customers = [],
-    vm.Load = Load;
-    vm.doreturn = doreturn;
-    Load();
+function customerController($scope, customerService) {
+    $scope.customers = [],
 
-    function Load() {
-        loadservice.Load().then(doreturn);
-
-        debugger;
-        //loadservice.Load().then(doreturn);
-    }
-
-    function doreturn(data) {
-        vm.customers = data;
-    }
-}
+    customerService.Load()
+        .then(function (customers) { $scope.customer = customers; })
+        .catch(function (error) { console.log(error); });
+ }

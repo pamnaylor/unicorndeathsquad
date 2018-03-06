@@ -9,15 +9,13 @@ function service1($http) {
 
     function SaveFile(dto) {
         debugger;
-        //var url = '../Customer/Save';
-
+        
         var url = '/api/Unicorn'; //  api / Unicorn
 
         $http.post(url, dto).then(doreturn); //.then(doreturn);
     }
 
     function doreturn(d){
-        debugger;
         alert(d.data);
     }
 }
