@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Angular Demo";
+}
+
+<h3>Unicorn Insert</h3>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/App/Main.js"></script>
+<script src="~/App/service.js"></script>
+<script src="~/App/controller.js"></script>
+
+<div ng-app="myApp">
+    <div ng-controller="Ctrl1">
+        <div>
+            <div>FirstName</div>
+            <div>
+                <input type="text" ng-model="FirstName" />
+            </div>
+        </div>
+        <div>
+            <div>LastName</div>
+            <div>
+                <input type="text" ng-model="LastName" />
+            </div>
+        </div>
+        <div>
+            <div>Nationality</div>
+            <div>
+                <input type="text" ng-model="Nationality" />
+            </div>
+        </div>
+        <div>
+            <div>Age</div>
+            <div>
+                <input type="text" ng-model="Age" />
+            </div>
+        </div>
+
+        <button ng-click="Save()">Save</button>
+    </div>
+</div>

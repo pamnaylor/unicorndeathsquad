@@ -1,0 +1,25 @@
+﻿<html>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<body>
+    <body data-ng-controller="Controller">
+        <input id="hdnData" type="hidden" value="@ViewBag.data" />
+        <table class="table table-bordered table-striped text-center">
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Age</th>
+                <th>Nationality</th>
+            </tr>
+
+            <tr ng-repeat="data in markers">
+                <td>{{data.name|uppercase}}</td>
+                <td>{{data.surname|lowercase}}</td>
+                <td>{{data.money|number:3}}</td>
+                <td>{{data.country}}</td>
+            </tr>
+        </table>
+    </body>
+
+</body>
+</html>

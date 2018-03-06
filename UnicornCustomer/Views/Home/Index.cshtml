@@ -1,0 +1,24 @@
+﻿
+<script src="~/Scripts/angular.js"></script>
+<script src="~/App/Main.js"></script>
+<script src="~/App/loadservice.js"></script>
+<script src="~/App/loadcontroller.js"></script>
+
+<h3>List of customers</h3>
+
+<a href="\Save">Goto Save Customer</a>
+
+<br />
+
+
+<div ng-app="myApp">
+    <div ng-controller="CtrlLoad">
+        <button ng-click="Load()">Reload</button>
+
+
+        <div ng-repeat="obj in customers">
+            <div>{{obj.FirstName}}</div>
+            <div>{{obj.LastName}}</div>
+        </div>
+    </div>
+</div>
